@@ -1,6 +1,7 @@
 package GITHUB.Matrix_Class;
 import java.util.Arrays;
-/*this is a sample programme that how you can use different fucntions of this matrix class */
+/*this is a sample programme that displays how you can use different fucntions of this matrix class */
+/*Class valid of 3*3 matrix Only. */
 public class sample {
     public static void main(String [] args){
         int [][]n ={{1,0,0},{0,1,0},{0,0,1}};
