@@ -23,7 +23,7 @@ public double [][] inverted(){ //returns the inverted matrix in [][] format
     }
     return final_matrix;
 }
-public double[][] adjoint(){ //returns the adjoint matrix in [][] format
+public double[][] adjoint(){ //returns the adjoint matrix in [][] format 
     double[][] new_matrix=new double [3][3];
     for(int i=0;i<=2;i++){
         for(int j=0;j<=2;j++){
@@ -73,6 +73,19 @@ public int[][] subract(int [][] matrix_C){
 }
 public double [][] multiply(double [][] matrix_B){
     this.matrix_B=matrix_B;
+    double [][] final_matrix =new double[3][3];
+    for(int j=0;j<=2;j++){
+        for(int i=0;i<=2;i++){
+            final_matrix[i][j]=multiply_helper(i, j);
+        }
+    }
+    return final_matrix;
+}
+public double [][] multiply(int [][] matrix_B){
+    for (int i = 0;i<3; i++) {
+        for(int j=0;j<3;j++){
+        this.matrix_B[i][j] = (double)matrix_B[i][j]; // Cast each element to int
+    }}
     double [][] final_matrix =new double[3][3];
     for(int j=0;j<=2;j++){
         for(int i=0;i<=2;i++){
