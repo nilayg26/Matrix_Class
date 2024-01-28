@@ -10,12 +10,13 @@ public class sample {
         System.out.println(Arrays.deepToString(M1.add(n)));
         System.out.println(Arrays.deepToString(M1.subract(n)));
         System.out.println(Arrays.deepToString(M1.adjoint()));
-        int  [][]p1 ={{1,2,3},{4,5,6},{7,8,9}};
+        int  [][]p1 ={{1,4,3},{3,5,6},{8,8,9}};
         Matrix M2= new Matrix(p1);
         System.out.println(Arrays.deepToString(M2.adjoint()));
         System.out.println(Arrays.deepToString(M1.multiply(p1)));
         System.out.println((M1.determinant()));
-        
+        System.out.println(Arrays.deepToString(M2.multiply(M2.inverted())));
+        System.out.println(M2.determinant());
     }
 }
 

@@ -4,7 +4,7 @@ public class Matrix  {
 int [][]key_matrix;
 int det =0;
 int cf=0;
-double [][] matrix_B= new double[3][3];
+float [][] matrix_B= new float[3][3];
 public Matrix(int[][]key_matrix){
     this.key_matrix=key_matrix;
 }
@@ -23,17 +23,17 @@ public float [][] inverted(){ //returns the inverted matrix in [][] format
     }
     return final_matrix;
 }
-public double[][] adjoint(){ //returns the adjoint matrix in [][] format 
-    double[][] new_matrix=new double [3][3];
+public float[][] adjoint(){ //returns the adjoint matrix in [][] format 
+    float[][] new_matrix=new float [3][3];
     for(int i=0;i<=2;i++){
         for(int j=0;j<=2;j++){
-            new_matrix[i][j]=(double)cofactor(i, j);
+            new_matrix[i][j]=(float)cofactor(i, j);
         }
     }
     return new_matrix;
 }
-public double [][] transpose(){ //returns the transpose matrix in [][] format
-    double [][] final_matrix =new double[3][3];
+public float [][] transpose(){ //returns the transpose matrix in [][] format
+    float [][] final_matrix =new float[3][3];
     for(int i=0;i<=2;i++){
         for(int j=0;j<=2;j++){
             final_matrix[i][j]=key_matrix[j][i];
@@ -71,9 +71,9 @@ public int[][] subract(int [][] matrix_C){
     }
     return result;
 }
-public double [][] multiply(double [][] matrix_B){
+public float [][] multiply(float [][] matrix_B){
     this.matrix_B=matrix_B;
-    double [][] final_matrix =new double[3][3];
+    float [][] final_matrix =new float[3][3];
     for(int j=0;j<=2;j++){
         for(int i=0;i<=2;i++){
             final_matrix[i][j]=multiply_helper(i, j);
@@ -81,12 +81,12 @@ public double [][] multiply(double [][] matrix_B){
     }
     return final_matrix;
 }
-public double [][] multiply(int [][] matrix_B){
+public float [][] multiply(int [][] matrix_B){
     for (int i = 0;i<3; i++) {
         for(int j=0;j<3;j++){
-        this.matrix_B[i][j] = (double)matrix_B[i][j]; // Cast each element to int
+        this.matrix_B[i][j] = (float)matrix_B[i][j]; // Cast each element to int
     }}
-    double [][] final_matrix =new double[3][3];
+    float [][] final_matrix =new float[3][3];
     for(int j=0;j<=2;j++){
         for(int i=0;i<=2;i++){
             final_matrix[i][j]=multiply_helper(i, j);
@@ -94,8 +94,8 @@ public double [][] multiply(int [][] matrix_B){
     }
     return final_matrix;
 }
-double multiply_helper(int i,int j){
-    double element=0.0;
+float multiply_helper(int i,int j){
+    float element=0;
     for(int row=0;row<=2;row++){
         element=element+(key_matrix[i][row]*matrix_B[row][j]);
     }
