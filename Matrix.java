@@ -8,14 +8,14 @@ double [][] matrix_B= new double[3][3];
 public Matrix(int[][]key_matrix){
     this.key_matrix=key_matrix;
 }
-public double [][] inverted(){ //returns the inverted matrix in [][] format
-    double[][] new_matrix=new double [3][3];
+public float [][] inverted(){ //returns the inverted matrix in [][] format
+    float[][] new_matrix=new float [3][3];
     for(int i=0;i<=2;i++){
         for(int j=0;j<=2;j++){
-            new_matrix[i][j]=(((double)cofactor(i, j)/(double)determinant()));
+            new_matrix[i][j]=(((float)cofactor(i, j)/(float)determinant()));
         }
     }
-    double [][] final_matrix =new double[3][3];
+    float [][] final_matrix =new float[3][3];
     for(int i=0;i<=2;i++){
         for(int j=0;j<=2;j++){
             final_matrix[i][j]=new_matrix[j][i];
