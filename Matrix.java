@@ -10,9 +10,10 @@ public Matrix(int[][]key_matrix){
 }
 public float [][] inverted(){ //returns the inverted matrix in [][] format
     float[][] new_matrix=new float [3][3];
+    int det= determinant();
     for(int i=0;i<=2;i++){
         for(int j=0;j<=2;j++){
-            new_matrix[i][j]=(((float)cofactor(i, j)/(float)determinant()));
+            new_matrix[i][j]=(((float)cofactor(i, j)/(float)det));
         }
     }
     float [][] final_matrix =new float[3][3];
@@ -53,8 +54,26 @@ public int determinant(){  //returns the determinant of the matrix in int format
     }
     return det;
 }
-public int[][] add(int [][] matrix_C){
-    int [][] result = new int[3][3];
+public float[][] add(int [][] matrix_C){
+    float [][] result = new float[3][3];
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            result[i][j]= (float)(matrix_C[i][j]+key_matrix[i][j]);
+        }
+    }
+    return result;
+}
+public float[][] subract(int [][] matrix_C){
+    float [][] result = new float[3][3];
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            result[i][j]= (float)(key_matrix[i][j]-matrix_C[i][j]);
+        }
+    }
+    return result;
+}
+public float[][] add(float [][] matrix_C){
+    float [][] result = new float[3][3];
     for(int i=0;i<3;i++){
         for(int j=0;j<3;j++){
             result[i][j]= matrix_C[i][j]+key_matrix[i][j];
@@ -62,8 +81,8 @@ public int[][] add(int [][] matrix_C){
     }
     return result;
 }
-public int[][] subract(int [][] matrix_C){
-    int [][] result = new int[3][3];
+public float[][] subract(float [][] matrix_C){
+    float [][] result = new float[3][3];
     for(int i=0;i<3;i++){
         for(int j=0;j<3;j++){
             result[i][j]= key_matrix[i][j]-matrix_C[i][j];
@@ -98,6 +117,12 @@ float multiply_helper(int i,int j){
     float element=0;
     for(int row=0;row<=2;row++){
         element=element+(key_matrix[i][row]*matrix_B[row][j]);
+    }
+    if(Math.abs(element)<0.001f){
+        element=0;
+    }
+    else if(Math.abs(element)<1.001f){
+        element=1;
     }
     return element;
 }
