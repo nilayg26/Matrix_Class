@@ -13,7 +13,7 @@ public class sample {
         System.out.println(Arrays.deepToString(M1.subract(n)));
         System.out.println(Arrays.deepToString(M1.adjoint()));
         System.out.println((M1.determinant()));
-        int  [][]p1 ={{1,9,31},{3,-10,6},{11,8,9}};
+        int  [][]p1 ={{91,90,31},{3,-10,6},{11,8,9}};
         System.out.println(" ");
         System.out.println(Arrays.deepToString(M1.multiply(p1)));
         Matrix M2= new Matrix(p1); //initialising p1 as an object M2

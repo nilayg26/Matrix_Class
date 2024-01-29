@@ -1,6 +1,6 @@
 package GITHUB.Matrix_Class;
 //Matrix class for 3*3 matrix
-public class Matrix  {
+public class Matrix{
 int [][]key_matrix;
 int det =0;
 int cf=0;
@@ -31,7 +31,13 @@ public float[][] adjoint(){ //returns the adjoint matrix in [][] format
             new_matrix[i][j]=(float)cofactor(i, j);
         }
     }
-    return new_matrix;
+    float [][] final_matrix =new float[3][3];
+    for(int i=0;i<=2;i++){
+        for(int j=0;j<=2;j++){
+            final_matrix[i][j]=new_matrix[j][i];
+        }
+    }
+    return final_matrix;
 }
 public float [][] transpose(){ //returns the transpose matrix in [][] format
     float [][] final_matrix =new float[3][3];
