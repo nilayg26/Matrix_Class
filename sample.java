@@ -2,7 +2,9 @@ package GITHUB.Matrix_Class;
 import java.util.Arrays;
 /*this is a sample programme that displays how you can use different fucntions of this matrix class 
  Class valid for 3*3 type matrix Only.
-Objects are initialised as integer matrix only, where as arguments in inbuilt functions can be passed as float or int types matrices.*/
+Objects are initialised as integer matrix only, where as arguments in inbuilt functions can be passed as float or int types matrices.
+Output is given as float type 2D array. 
+Arrays.deepToString() Returns a string representation of the "deep contents" of a multidimensional array*/
 
 public class sample {
     public static void main(String [] args){
