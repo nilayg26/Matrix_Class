@@ -12,7 +12,7 @@ public class sample {
         Matrix M1= new Matrix(n); //initialising n as an object M1
         System.out.println(Arrays.deepToString(M1.inverted()));
         System.out.println(Arrays.deepToString(M1.add(n)));
-        System.out.println(Arrays.deepToString(M1.subract(n)));
+        System.out.println(Arrays.deepToString(M1.subtract(n)));
         System.out.println(Arrays.deepToString(M1.adjoint()));
         System.out.println((M1.determinant()));
         int  [][]p1 ={{9,9,3},{3,10,6},{1,8,9}};
