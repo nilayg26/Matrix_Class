@@ -69,7 +69,7 @@ public float[][] add(int [][] matrix_C){
     }
     return result;
 }
-public float[][] subract(int [][] matrix_C){
+public float[][] subtract(int [][] matrix_C){
     float [][] result = new float[3][3];
     for(int i=0;i<3;i++){
         for(int j=0;j<3;j++){
