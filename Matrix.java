@@ -127,7 +127,7 @@ float multiply_helper(int i,int j){
     if(Math.abs(element)<0.001f){
         element=0;
     }
-    else if(Math.abs(element)<1.001f){
+    else if(Math.abs(element)>0.991&&Math.abs(element)<1.001f){
         element=1;
     }
     return element;
