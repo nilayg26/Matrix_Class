@@ -1,4 +1,6 @@
-# 3*3 MATRIX CLASS FILE IN JAVA.
+# Java Matrix Operations: A 3x3 Matrix Class.
+# Source Code: Matrix.java
+# Sample file: sample.java 
 ## Output of Sample java file
     [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
     [[2.0, 0.0, 0.0], [0.0, 2.0, 0.0], [0.0, 0.0, 2.0]]
