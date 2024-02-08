@@ -1,4 +1,4 @@
-# This is Matrix 3*3 class written by Nilay Gupta.
+# 3*3 MATRIX CLASS FILE IN JAVA.
 ## Output of Sample java file
     [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
     [[2.0, 0.0, 0.0], [0.0, 2.0, 0.0], [0.0, 0.0, 2.0]]
