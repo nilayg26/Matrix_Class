@@ -1,5 +1,4 @@
-package GITHUB.Matrix_Class;
-//Matrix class for 3*3 matrix
+package GITHUB.Matrix_Class; //remove this line before running the code
 public class Matrix{
 int [][]key_matrix;
 int det =0;

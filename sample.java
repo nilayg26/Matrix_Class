@@ -1,4 +1,4 @@
-package GITHUB.Matrix_Class;
+package GITHUB.Matrix_Class; //remove this line before running the code
 import java.util.Arrays;
 /*this is a sample programme that displays how you can use different fucntions of this matrix class 
  Class valid for 3*3 type matrix Only.
