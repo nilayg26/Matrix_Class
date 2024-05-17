@@ -16,9 +16,13 @@ public class Matrix {
         matrix_B = new float[3][3];
     }
 
-    public float[][] inverted() { // returns the inverted matrix in [][] format
+    public float[][] inverse() { // returns the inverse matrix in [][] format
         float[][] new_matrix = new float[3][3];
         int det = determinant();
+        if(det==0){
+            System.out.println("Singular Matrix are not invertible");
+            return null;
+        }
         for (int i = 0; i <= 2; i++) {
             for (int j = 0; j <= 2; j++) {
                 new_matrix[i][j] = (((float) cofactor(i, j) / (float) det));

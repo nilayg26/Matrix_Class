@@ -14,7 +14,7 @@ public class sample {
     public static void main(String [] args){
         int [][]n ={{1,0,0},{0,1,0},{0,0,1}};
         Matrix M1= new Matrix(n); //initialising n as an object M1
-        System.out.println(Arrays.deepToString(M1.inverted()));
+        System.out.println(Arrays.deepToString(M1.inverse()));
         System.out.println(Arrays.deepToString(M1.add(n)));
         System.out.println(Arrays.deepToString(M1.subtract(n)));
         System.out.println(Arrays.deepToString(M1.adjoint()));
@@ -26,7 +26,7 @@ public class sample {
         System.out.println(Arrays.deepToString(M2.adjoint()));
         System.out.println(Arrays.deepToString(M2.add(n)));
         System.out.println(Arrays.deepToString(M2.transpose()));
-        System.out.println(Arrays.deepToString(M2.multiply(M2.inverted())));
+        System.out.println(Arrays.deepToString(M2.multiply(M2.inverse())));
         System.out.println(M2.determinant());
     }
 }
