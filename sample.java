@@ -14,20 +14,23 @@ public class sample {
     public static void main(String [] args){
         int [][]n ={{1,0,0},{0,1,0},{0,0,1}};
         Matrix M1= new Matrix(n); //initialising n as an object M1
-        System.out.println(Arrays.deepToString(M1.inverse()));
+        
+        /*For return type and arguments and constructors information, please go 
+        through the code of Matrix.java */
+        System.out.println(Arrays.deepToString(M1.getInverse()));
         System.out.println(Arrays.deepToString(M1.add(n)));
         System.out.println(Arrays.deepToString(M1.subtract(n)));
-        System.out.println(Arrays.deepToString(M1.adjoint()));
-        System.out.println((M1.determinant()));
+        System.out.println(Arrays.deepToString(M1.getAdjoint()));
+        System.out.println((M1.getDeterminant()));
         int  [][]p1 ={{9,9,3},{3,10,6},{1,8,9}};
         System.out.println(" ");
         System.out.println(Arrays.deepToString(M1.multiply(p1)));
         Matrix M2= new Matrix(p1); //initialising p1 as an object M2
-        System.out.println(Arrays.deepToString(M2.adjoint()));
+        System.out.println(Arrays.deepToString(M2.getAdjoint()));
         System.out.println(Arrays.deepToString(M2.add(n)));
-        System.out.println(Arrays.deepToString(M2.transpose()));
-        System.out.println(Arrays.deepToString(M2.multiply(M2.inverse())));
-        System.out.println(M2.determinant());
+        System.out.println(Arrays.deepToString(M2.getTranspose()));
+        System.out.println(Arrays.deepToString(M2.multiply(M2.getInverse())));
+        System.out.println(M2.getDeterminant());
     }
 }
 

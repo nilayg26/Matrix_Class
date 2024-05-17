@@ -9,16 +9,24 @@ public class Matrix {
     private int cf;
     private float[][] matrix_B;
 
-    public Matrix(int[][] key_matrix) {
+    public Matrix(int[][] key_matrix) {//Constructor can take int [][] matrix only as input
         this.key_matrix = key_matrix;
         det = 0;
         cf = 0;
         matrix_B = new float[3][3];
     }
-
-    public float[][] inverse() { // returns the inverse matrix in [][] format
+    public Matrix(Matrix M1){ //copy Constructor
+        this.key_matrix=M1.key_matrix;
+        det = 0;
+        cf = 0;
+        matrix_B = new float[3][3];
+    }
+        public int [][] getMatrix(){
+            return key_matrix;
+    }
+    public float[][] getInverse() { // returns float[][]
         float[][] new_matrix = new float[3][3];
-        int det = determinant();
+        int det = getDeterminant();
         if(det==0){
             System.out.println("Singular Matrix are not invertible");
             return null;
@@ -37,7 +45,7 @@ public class Matrix {
         return final_matrix;
     }
 
-    public float[][] adjoint() { // returns the adjoint matrix in [][] format
+    public float[][] getAdjoint() {  // returns float[][]
         float[][] new_matrix = new float[3][3];
         for (int i = 0; i <= 2; i++) {
             for (int j = 0; j <= 2; j++) {
@@ -53,7 +61,7 @@ public class Matrix {
         return final_matrix;
     }
 
-    public float[][] transpose() { // returns the transpose matrix in [][] format
+    public float[][] getTranspose() {// returns float[][]
         float[][] final_matrix = new float[3][3];
         for (int i = 0; i <= 2; i++) {
             for (int j = 0; j <= 2; j++) {
@@ -63,13 +71,7 @@ public class Matrix {
         return final_matrix;
     }
 
-    private int cofactor(int i, int j) {
-        cf = (key_matrix[(i + 1) % 3][(j + 1) % 3] * key_matrix[(i + 2) % 3][(j + 2) % 3])
-                - (key_matrix[(i + 2) % 3][(j + 1) % 3] * key_matrix[(i + 1) % 3][(j + 2) % 3]);
-        return cf;
-    }
-
-    public int determinant() { // returns the determinant of the matrix in int format
+    public int getDeterminant() { // returns int
         det = 0;
         for (int j = 0; j < 3; j++) {
             det = det + (key_matrix[0][j] * cofactor(0, j));
@@ -77,7 +79,7 @@ public class Matrix {
         return det;
     }
 
-    public float[][] add(int[][] matrix_C) {
+    public float[][] add(int[][] matrix_C) { //accepts int [][] & returns float[][]
         float[][] result = new float[3][3];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -87,7 +89,7 @@ public class Matrix {
         return result;
     }
 
-    public float[][] subtract(int[][] matrix_C) {
+    public float[][] subtract(int[][] matrix_C) {//accepts int [][] & returns float[][]
         float[][] result = new float[3][3];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -97,7 +99,7 @@ public class Matrix {
         return result;
     }
 
-    public float[][] add(float[][] matrix_C) {
+    public float[][] add(float[][] matrix_C) {//accepts & returns float[][]
         float[][] result = new float[3][3];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -107,7 +109,7 @@ public class Matrix {
         return result;
     }
 
-    public float[][] subtract(float[][] matrix_C) {
+    public float[][] subtract(float[][] matrix_C) {//accepts & returns float[][]
         float[][] result = new float[3][3];
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -117,7 +119,7 @@ public class Matrix {
         return result;
     }
 
-    public float[][] multiply(float[][] matrix_B) {
+    public float[][] multiply(float[][] matrix_B) {//accepts & returns float[][]
         this.matrix_B = matrix_B;
         float[][] final_matrix = new float[3][3];
         for (int j = 0; j <= 2; j++) {
@@ -128,7 +130,7 @@ public class Matrix {
         return final_matrix;
     }
 
-    public float[][] multiply(int[][] matrix_B) {
+    public float[][] multiply(int[][] matrix_B) {//accepts int [][] & returns float[][]
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 this.matrix_B[i][j] = (float) matrix_B[i][j]; // Cast each element to int
@@ -154,5 +156,10 @@ public class Matrix {
             element = 1;
         }
         return element;
+    }
+    private int cofactor(int i, int j) {
+        cf = (key_matrix[(i + 1) % 3][(j + 1) % 3] * key_matrix[(i + 2) % 3][(j + 2) % 3])
+                - (key_matrix[(i + 2) % 3][(j + 1) % 3] * key_matrix[(i + 1) % 3][(j + 2) % 3]);
+        return cf;
     }
 }
