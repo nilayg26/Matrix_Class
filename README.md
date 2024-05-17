@@ -1,4 +1,4 @@
-# Java Matrix Operations: A 3x3 Matrix Class.
+# Java [Matrix](https://en.wikipedia.org/wiki/Matrix_(mathematics)) Operations: A 3x3 Matrix Class.
 # Source Code: Matrix.java
 # Sample file: sample.java 
 ## Output of sample.java file
